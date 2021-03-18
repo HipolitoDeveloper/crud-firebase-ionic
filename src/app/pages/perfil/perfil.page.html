@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="container" >
+        <form [formGroup]="formAtualizar">
+          <div class="content-items" >
+              <ion-item  class="item">         
+                <ion-label position="stacked" color="dark">Nome</ion-label>        
+                <ion-input type="text" formControlName="nome" [(ngModel)]="usuario.nome"></ion-input>
+              </ion-item>
+            
+              <ion-item>     
+                <ion-label  position="stacked" color="dark">Sobrenome</ion-label>                
+                <ion-input type="text" formControlName="sobrenome" [(ngModel)]="usuario.sobrenome"></ion-input>
+              </ion-item>            
+
+              <ion-item>   
+                <ion-label position="stacked" color="dark">Endereço</ion-label>                    
+                <ion-input type="text" formControlName="endereco" [(ngModel)]="usuario.endereco"></ion-input>
+              </ion-item> 
+                            
+              <ion-button color="success" class="button" type="submit" (click)="synchronizeUser()">Sincronizar Dados</ion-button>          
+          </div>
+        </form>
+  </ion-content>
+</ion-app>

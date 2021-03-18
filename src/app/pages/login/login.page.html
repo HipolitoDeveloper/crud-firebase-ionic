@@ -1,0 +1,61 @@
+<ion-app>
+  <ion-content class="container" >
+      <form [formGroup]="formCadastro" (onSubmit)="logar()">
+        <div class="content-items" >
+
+            <ion-item  class="item">
+              <ion-icon
+              name="albums-outline"
+              color="success"
+              slot="start"
+            ></ion-icon>          
+              <ion-input type="email" formControlName="email" placeholder="Digite seu e-mail" ></ion-input>
+            </ion-item>
+            <ion-note slot="end" color="danger" *ngIf="formCadastro.value.email == 0">
+            Obrigatório
+            </ion-note>
+
+            <ion-item *ngIf="isSignup">
+              <ion-icon
+              name="person"
+              color="success"
+              slot="start"
+            ></ion-icon>         
+              <ion-input type="text" formControlName="nome" placeholder="Digite seu nome"></ion-input>
+            </ion-item> 
+
+            <ion-item *ngIf="isSignup">
+              <ion-icon
+              name="person"
+              color="success"
+              slot="start"
+            ></ion-icon>         
+              <ion-input type="text" formControlName="sobrenome" placeholder="Digite seu sobrenome"></ion-input>
+            </ion-item> 
+
+            <ion-item>
+              <ion-icon
+              name="key-outline"
+              color="success"
+              slot="start"
+            ></ion-icon>         
+              <ion-input type="password" formControlName="senha" placeholder="Digite sua senha"></ion-input>
+            </ion-item>  
+            <ion-note slot="end" color="danger" *ngIf="formCadastro.value.senha == 0">
+              Obrigatório
+            </ion-note>         
+         
+            <ion-button *ngIf="!isSignup" color="success" class="button" type="submit" (click)="logar()">Entrar</ion-button>
+            <ion-button *ngIf="isSignup" color="success" class="button" type="submit" (click)="cadastrar()">Cadastrar</ion-button>    
+        </div>
+
+        
+      </form>
+      <div class="content-options">      
+          <ion-button color="light" class="item">Esqueceu sua senha?</ion-button>
+          <ion-button *ngIf="!isSignup" color="light" class="item" (click)="changePageFunction()" color="light">Cadastrar-se</ion-button>
+          
+          <ion-button *ngIf="isSignup" color="light" class="item" (click)="changePageFunction()" color="light">Já possui uma conta?</ion-button>
+      </div>
+  </ion-content>
+</ion-app>
