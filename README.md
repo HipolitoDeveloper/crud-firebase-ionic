@@ -5,8 +5,8 @@ Conexão com o Banco Firestores do Firebase com a implementação de um layout e
 - CRUD
 
 ## Tecnologias
-- IONIC 5
-- FIREBASE
+- [Firebase] >= 8.0
+- [IONIC] >= 6.0
 
 ## Instalação
 
